@@ -1,3 +1,12 @@
-@for (todo of todoItems(); track todo.id) {
-<p>{{ todo.title }}</p>
-}
+<h3>Todo List</h3>
+
+<ul>
+  @for (todo of todoItems(); track todo.id) {
+  <li>
+    <input type="checkbox" id="todo-{{ todo.id }}" [value]="todo.completed" />
+    <label for="todo-{{ todo.id }}">
+      {{ todo.title }}
+    </label>
+  </li>
+  }
+</ul>
