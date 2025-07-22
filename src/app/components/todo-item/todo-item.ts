@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Todo } from '../../model/todo.type';
+import { HighlightCompletedTodo } from '../../directives/highlight-completed-todo';
 
 @Component({
   selector: 'app-todo-item',
-  imports: [],
+  imports: [HighlightCompletedTodo],
   templateUrl: './todo-item.html',
-  styleUrl: './todo-item.scss'
+  styleUrl: './todo-item.scss',
 })
 export class TodoItem {
-
+  todo = input.required<Todo>();
 }
